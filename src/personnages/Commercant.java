@@ -1,14 +1,19 @@
 package personnages;
 
-import java.util.Random;
-import java.util.random.RandomGenerator;
-
 public class Commercant {
-	private Humain self;
+	public Humain self;
 	
+	public Commercant(String nom, String boissonFavorite, int quantiteArgent) {
+		self = new Humain(nom, boissonFavorite, quantiteArgent);
+	}
 	public int seFaireExtorquer() {
 		int argent=self.getQuantiteArgent();
-		self.setQuantiteArgent(0);
+		self.perdreArgent(argent);
+		self.parler("J’ai tout perdu! Le monde est trop injuste...");
 		return argent;
+	}
+	public void recevoir(int argent) {
+		self.gagnerArgent(argent);
+		self.parler(argent+" sous ! Je te remercie généreux donateur!");
 	}
 }

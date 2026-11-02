@@ -13,7 +13,7 @@ public class Humain {
 		this.quantiteArgent = quantiteArgent;
 	}
 	
-	private void parler(String texte) {
+	public void parler(String texte) {
 		System.out.println("("+nom+") - "+texte);
 	}
 	public String getNom() {
@@ -39,11 +39,11 @@ public class Humain {
 	public void setQuantiteArgent(int quantiteArgent) {
 		this.quantiteArgent = quantiteArgent;
 	}
-
-	private void perdreArgent(int argent) {
+	//fonctions faites publiques pour acces des heriteurs
+	public void perdreArgent(int argent) {
 		quantiteArgent-=argent;
 	}
-	private void gagnerArgent(int argent) {
+	public void gagnerArgent(int argent) {
 		quantiteArgent+=argent;
 	}
 	public void direBonjour() {
