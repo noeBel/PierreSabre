@@ -39,11 +39,12 @@ public class Humain {
 	public void setQuantiteArgent(int quantiteArgent) {
 		this.quantiteArgent = quantiteArgent;
 	}
-	//fonctions faites publiques pour acces des heriteurs
-	public void perdreArgent(int argent) {
+	//fonctions faites protected pour acces des heriteurs
+	//choix entre rendre l'attribut protected et faire une methode dans les filles, ou rendre les methodes protected
+	protected void perdreArgent(int argent) {
 		quantiteArgent-=argent;
 	}
-	public void gagnerArgent(int argent) {
+	protected void gagnerArgent(int argent) {
 		quantiteArgent+=argent;
 	}
 	public void direBonjour() {
